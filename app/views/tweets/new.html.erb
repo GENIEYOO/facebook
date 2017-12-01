@@ -1,0 +1,9 @@
+<h1>트윗만들기</h1>
+<%= form_for(@tweet) do |f| %>
+  제목 : <%= f.text_field :title %><br>
+  내용 : <%= f.text_field :content %><br>
+  파일업로더 : <%= f.file_field :photo_url %><br>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "트윗하기"%>
+
+<% end %>
